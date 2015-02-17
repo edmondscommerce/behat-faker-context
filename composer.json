@@ -18,7 +18,7 @@
   ],
   "minimum-stability": "dev",
   "require": {
-    "fzaninotto/faker": "1.5.*@dev",
+    "fzaninotto/faker": "1.5.*@dev"
   },
   "autoload": {
     "psr-4": {
