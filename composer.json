@@ -1,0 +1,28 @@
+{
+  "name": "edmondscommerce/selenium-server",
+  "description": "Utilities for installing and running Selenium (with Chromedriver), ideal for use with Behat",
+  "keywords": [
+    "Faker",
+    "Behat",
+    "Testing",
+    "Data",
+    "Browser Testing"
+  ],
+  "homepage": "https://www.edmondscommerce.co.uk",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "edmondscommerce",
+      "email": "info@edmondscommerce.co.uk"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "fzaninotto/faker": "1.5.*@dev",
+  },
+  "autoload": {
+    "psr-4": {
+      "EdmondsCommerce\\FakerContext\\": "src/"
+    }
+  }
+}
