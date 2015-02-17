@@ -1,6 +1,6 @@
 {
-  "name": "edmondscommerce/selenium-server",
-  "description": "Utilities for installing and running Selenium (with Chromedriver), ideal for use with Behat",
+  "name": "edmondscommerce/faker-context",
+  "description": "A Behat Context that allows you to use Faker",
   "keywords": [
     "Faker",
     "Behat",
