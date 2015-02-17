@@ -7,7 +7,7 @@ A simple Behat Context to allow you to use Faker when running your Behat feature
 
 Install via composer
 
-"edmondscommerce/faker-context": "dev-master"
+"edmondscommerce/faker-context": "*@dev"
 
 
 ### Include Context in Behat Configuration
