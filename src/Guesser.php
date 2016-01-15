@@ -1,15 +1,8 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: joseph
- * Date: 17/02/15
- * Time: 12:46
- */
+<?php namespace EdmondsCommerce\BehatFakerContext;
 
-namespace EdmondsCommerce\FakerContext;
+use Faker\Guesser\Name;
 
-
-class Guesser extends \Faker\Guesser\Name
+class Guesser extends Name
 {
     public function guessFormat($name)
     {

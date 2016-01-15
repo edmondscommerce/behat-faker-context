@@ -1,5 +1,5 @@
 {
-  "name": "edmondscommerce/faker-context",
+  "name": "edmondscommerce/behat-faker-context",
   "description": "A Behat Context that allows you to use Faker",
   "keywords": [
     "Faker",
@@ -18,11 +18,15 @@
   ],
   "minimum-stability": "dev",
   "require": {
-    "fzaninotto/faker": "1.5.*@dev"
+    "fzaninotto/faker": "1.5.*@dev",
+
+  },
+  "suggest": {
+    "edmondscommerce/behat-framework": "Parent framework, allows easier behat setup"
   },
   "autoload": {
     "psr-4": {
-      "EdmondsCommerce\\FakerContext\\": "src/"
+      "EdmondsCommerce\\BehatFakerContext\\": "src/"
     }
   }
 }

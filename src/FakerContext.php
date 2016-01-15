@@ -1,32 +1,32 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: joseph
- * Date: 17/02/15
- * Time: 10:51
- */
-
-namespace EdmondsCommerce\FakerContext;
+<?php namespace EdmondsCommerce\BehatFakerContext;
 
 use Behat\Mink\Element;
 use Behat\MinkExtension\Context;
+use Behat\MinkExtension\Context\RawMinkContext;
+use Faker\Factory;
+use Faker\Generator;
 
-final class FakerContext extends Context\RawMinkContext
+final class FakerContext extends RawMinkContext
 {
 
-    /** @var  \Faker\Generator */
+    /**
+     * @var Generator
+     */
     private $_faker;
 
-    /** @var  Guesser */
+    /**
+     * @var Guesser
+     */
     private $_guesser;
 
     /**
-     * @return \Faker\Generator
+     * @return Generator
      */
     protected function faker()
     {
-        if (!$this->_faker) {
-            $this->_faker = \Faker\Factory::create();
+        if (!$this->_faker)
+        {
+            $this->_faker = Factory::create();
         }
         return $this->_faker;
     }
@@ -36,7 +36,8 @@ final class FakerContext extends Context\RawMinkContext
      */
     protected function guesser()
     {
-        if (!$this->_guesser) {
+        if (!$this->_guesser)
+        {
             $this->_guesser = new Guesser($this->faker());
         }
         return $this->_guesser;
@@ -62,13 +63,18 @@ final class FakerContext extends Context\RawMinkContext
     protected function fillForm(Element\NodeElement $form)
     {
         $inputs = $form->findAll('css', 'input[type="text"]');
-        foreach ($inputs as $i) {
+        foreach ($inputs as $i)
+        {
             /** @var  Element\NodeElement $i */
-            if ($i->isVisible()) {
-                if ($i->hasAttribute('name')) {
+            if ($i->isVisible())
+            {
+                if ($i->hasAttribute('name'))
+                {
                     $name = $i->getAttribute('name');
                     $value = $this->getFakerValue($name);
-                } else {
+                }
+                else
+                {
                     $value = $this->faker()->text();
                 }
                 $i->setValue($value);
@@ -79,36 +85,46 @@ final class FakerContext extends Context\RawMinkContext
 
         $passwords = $form->findAll('css', 'input[type="password"]');
         $password = $this->faker()->password;
-        foreach ($passwords as $p) {
-            if ($p->isVisible()) {
+        foreach ($passwords as $p)
+        {
+            if ($p->isVisible())
+            {
                 $p->setValue($password);
             }
         }
 
         $selects = $form->findAll('css', 'select');
-        foreach ($selects as $s) {
+        foreach ($selects as $s)
+        {
             /** @var  Element\NodeElement $s */
-            if ($s->isVisible()) {
+            if ($s->isVisible())
+            {
                 $s->selectOption($s->find('css', 'option')->getAttribute('name'));
             }
         }
 
         $checkboxes = $form->findAll('css', 'checkbox');
-        foreach ($checkboxes as $c) {
+        foreach ($checkboxes as $c)
+        {
             /** @var  Element\NodeElement $c */
-            if ($c->isVisible()) {
+            if ($c->isVisible())
+            {
                 $c->check();
             }
         }
 
         $radios = $form->findAll('css', 'input[type="radio"]');
         $radio_names = array();
-        foreach ($radios as $r) {
+        foreach ($radios as $r)
+        {
             /** @var  Element\NodeElement $r */
-            if ($r->isVisible()) {
-                if ($r->hasAttribute('name')) {
+            if ($r->isVisible())
+            {
+                if ($r->hasAttribute('name'))
+                {
                     $name = $r->getAttribute('name');
-                    if (!isset($radio_names[$name])) {
+                    if (!isset($radio_names[$name]))
+                    {
                         $radio_names[$name] = true;
                         $r->click();
                     }
@@ -126,7 +142,8 @@ final class FakerContext extends Context\RawMinkContext
     {
         $guess = $this->guesser()->guessFormat($name);
 
-        if (!$guess) {
+        if (!$guess)
+        {
             return $this->faker()->text();
         }
 
