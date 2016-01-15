@@ -1,32 +1,31 @@
 {
-  "name": "edmondscommerce/behat-faker-context",
-  "description": "A Behat Context that allows you to use Faker",
-  "keywords": [
-    "Faker",
-    "Behat",
-    "Testing",
-    "Data",
-    "Browser Testing"
-  ],
-  "homepage": "https://www.edmondscommerce.co.uk",
-  "license": "MIT",
-  "authors": [
-    {
-      "name": "edmondscommerce",
-      "email": "info@edmondscommerce.co.uk"
+    "name": "edmondscommerce/behat-faker-context",
+    "description": "A Behat Context that allows you to use Faker",
+    "keywords": [
+        "Faker",
+        "Behat",
+        "Testing",
+        "Data",
+        "Browser Testing"
+    ],
+    "homepage": "https://www.edmondscommerce.co.uk",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "edmondscommerce",
+            "email": "info@edmondscommerce.co.uk"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "fzaninotto/faker": "1.5.*@dev"
+    },
+    "suggest": {
+        "edmondscommerce/behat-framework": "Parent framework, allows easier behat setup"
+    },
+    "autoload": {
+        "psr-4": {
+            "EdmondsCommerce\\BehatFakerContext\\": "src/"
+        }
     }
-  ],
-  "minimum-stability": "dev",
-  "require": {
-    "fzaninotto/faker": "1.5.*@dev",
-
-  },
-  "suggest": {
-    "edmondscommerce/behat-framework": "Parent framework, allows easier behat setup"
-  },
-  "autoload": {
-    "psr-4": {
-      "EdmondsCommerce\\BehatFakerContext\\": "src/"
-    }
-  }
 }
