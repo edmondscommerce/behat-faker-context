@@ -20,6 +20,6 @@ default:
             # ...
             contexts:
                 - # ...
-                - EdmondsCommerce\BehatFakerContext\BehatFakerContext
+                - EdmondsCommerce\BehatChromePerformance\Chrom
 
 ```
