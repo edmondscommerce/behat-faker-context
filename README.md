@@ -1,4 +1,4 @@
-#Faker Context
+# Faker Context
 ## By [Edmonds Commerce](https://www.edmondscommerce.co.uk)
 
 A simple Behat Context to allow you to use Faker when running your Behat features
