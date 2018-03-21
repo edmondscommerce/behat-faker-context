@@ -16,7 +16,6 @@
             "email": "info@edmondscommerce.co.uk"
         }
     ],
-    "minimum-stability": "dev",
     "require": {
         "fzaninotto/faker": "1.5.*@dev"
     },
