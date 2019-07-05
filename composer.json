@@ -17,7 +17,7 @@
         }
     ],
     "require": {
-        "fzaninotto/faker": "1.5.*@dev|^1.6"
+        "fzaninotto/faker": "^1.6"
     },
     "suggest": {
         "edmondscommerce/behat-framework": "Parent framework, allows easier behat setup"
